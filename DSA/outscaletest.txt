@@ -8,6 +8,7 @@ Answer:
     Use a linked list when the size of the stack is not fixed or when you need dynamic memory allocation and deallocation.
     Linked lists allow for efficient insertion and deletion at both ends, making it a good choice if you frequently push and pop elements.
     It's a better choice if you're concerned about memory usage and want to allocate memory only as needed.
+
     Array:
 
     Use an array when the size of the stack is fixed or can be reasonably predicted in advance.
@@ -29,11 +30,9 @@ Answer:
     This is faster than linear time complexity, which you might encounter with array-based data structures.
 
     However, it's important to consider that the efficiency of a BST depends on the balance of the tree. 
-    Unbalanced trees can lead to worst-case time complexity scenarios. To address this, you may consider using self-balancing binary search trees,
-    such as AVL trees or Red-Black trees, which ensure the tree remains balanced during insertions and deletions, guaranteeing O(log n) time complexity for these operations.
+    Unbalanced trees can lead to worst-case time complexity scenarios. To address this, you may consider using self-balancing binary search trees,such as AVL trees or Red-Black trees, which ensure the tree remains balanced during insertions and deletions, guaranteeing O(log n) time complexity for these operations.
 
-    In summary, a Binary Search Tree or a self-balancing variant is a good choice when you have a dataset with no duplicates and 
-    require frequent insert and delete operations, while maintaining efficient access to the data.
+    In summary, a Binary Search Tree or a self-balancing variant is a good choice when you have a dataset with no duplicates and require frequent insert and delete operations, while maintaining efficient access to the data.
 
 3.In case of collisions in hashmaps which one of the following data structures is used along with hashmap
 
