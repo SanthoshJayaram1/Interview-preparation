@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #table-container {
+      height: 300px;
+      overflow: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div id="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const data = []; // Your large dataset goes here
+
+    const container = document.getElementById('table-container');
+    const tableBody = document.getElementById('table-body');
+
+    function renderTable(start, end) {
+      tableBody.innerHTML = '';
+
+      for (let i = start; i < end; i++) {
+        const row = document.createElement('tr');
+        const cell1 = document.createElement('td');
+        cell1.textContent = data[i].id;
+        const cell2 = document.createElement('td');
+        cell2.textContent = data[i].name;
+        row.appendChild(cell1);
+        row.appendChild(cell2);
+        tableBody.appendChild(row);
+      }
+    }
+
+    container.addEventListener('scroll', function () {
+      const rowHeight = 40; // Adjust as needed
+      const visibleRows = Math.ceil(container.clientHeight / rowHeight);
+      const start = Math.floor(container.scrollTop / rowHeight);
+      const end = start + visibleRows + 1;
+
+      renderTable(start, end);
+    });
+
+    // Initial rendering
+    renderTable(0, 10); // Render the first 10 rows initially
+  </script>
+</body>
+</html>
+

@@ -23,7 +23,7 @@ const Singleton = (function () {
   
     return {
       getInstance: function () {
-        // 👇 if not an instance then create an instance else return the already created instance.
+        //  if not an instance then create an instance else return the already created instance.
         if (!instance) {
           instance = createInstance();
         }
